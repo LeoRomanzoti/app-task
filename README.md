@@ -1,4 +1,4 @@
-# App do SuperClássicos
+# App Tarefas
 
 Aplicativo mobile, desenvolvido com React Native para adicionar e realizar tarefas do dia-a-dia.
 

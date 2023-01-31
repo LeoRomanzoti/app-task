@@ -9,15 +9,21 @@ import {
     query,
     updateDoc,
     doc,
+    deleteDoc,
 } from "firebase/firestore";
 
 export default function Task({ navigation }) {
     const [task, setTask] = useState([]);
     const db = collection(database, "Tasks");
 
-    function deleteTask(task) {
+    function favoriteTask(task) {
         const taskRef = doc(database, "Tasks", task.id);
         updateDoc(taskRef, { status: !task.status });
+    }
+
+    function deleteTask(task) {
+        const taskRef = doc(database, "Tasks", task.id);
+        deleteDoc(taskRef);
     }
 
     useEffect(() => {
@@ -40,18 +46,6 @@ export default function Task({ navigation }) {
                 renderItem={({ item }) => {
                     return (
                         <View style={styles.tasks}>
-                            <TouchableOpacity
-                                style={styles.deleteTask}
-                                onPress={() => {
-                                    deleteTask(item);
-                                }}
-                            >
-                                <FontAwesome
-                                    name="star"
-                                    size={23}
-                                    color={item?.status ? "#f92e6a" : "white"}
-                                ></FontAwesome>
-                            </TouchableOpacity>
                             <Text
                                 style={styles.descriptionTask}
                                 onPress={() => {
@@ -63,6 +57,32 @@ export default function Task({ navigation }) {
                             >
                                 {item.description}
                             </Text>
+                            <TouchableOpacity
+                                style={styles.deleteTask}
+                                onPress={() => {
+                                    favoriteTask(item);
+                                }}
+                            >
+                                <FontAwesome
+                                    name="star"
+                                    size={23}
+                                    color={
+                                        item?.status ? "#00246B" : "lightgray"
+                                    }
+                                ></FontAwesome>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={styles.deleteTask}
+                                onPress={() => {
+                                    deleteTask(item);
+                                }}
+                            >
+                                <FontAwesome
+                                    name="trash-o"
+                                    size={23}
+                                    color="lightgray"
+                                ></FontAwesome>
+                            </TouchableOpacity>
                         </View>
                     );
                 }}

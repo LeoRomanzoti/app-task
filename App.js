@@ -10,26 +10,36 @@ const Stack = createStackNavigator();
 export default function App() {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Task">
+            <Stack.Navigator
+                initialRouteName="Task"
+                screenOptions={{
+                    headerStyle: { backgroundColor: "#8AB6F9" },
+                    headerTintColor: "#00246B",
+                    headerTitleStyle: {
+                        fontWeight: "bold",
+                        fontSize: 23,
+                    },
+                }}
+            >
                 <Stack.Screen
                     name="Task"
                     component={Task}
                     options={{
-                        headerTintColor: "#f92e6a",
+                        headerTitle: "Tarefas",
                     }}
                 />
                 <Stack.Screen
                     name="NewTask"
                     component={NewTask}
                     options={{
-                        headerTintColor: "#f92e6a",
+                        headerTitle: "Nova Tarefa",
                     }}
                 />
                 <Stack.Screen
                     name="Details"
                     component={Details}
                     options={{
-                        headerTintColor: "#f92e6a",
+                        headerTitle: "Editar Tarefa",
                     }}
                 />
             </Stack.Navigator>

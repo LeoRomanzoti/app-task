@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
         width: 60,
         height: 60,
         bottom: 30,
-        left: 20,
-        backgroundColor: "#f92e6a",
+        right: 30,
+        backgroundColor: "#00246B",
         borderRadius: 50,
         justifyContent: "center",
         alignItems: "center",
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     },
     deleteTask: {
         justifyContent: "center",
-        paddingLeft: 15,
+        paddingRight: 15,
     },
     descriptionTask: {
         width: "75%",
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         borderRadius: 50,
         marginBottom: 5,
-        marginRight: 15,
+        marginLeft: 15,
         color: "#282b2db5",
     },
 });

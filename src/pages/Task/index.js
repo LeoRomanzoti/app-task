@@ -60,27 +60,13 @@ export default function Task({ navigation }) {
                             <TouchableOpacity
                                 style={styles.deleteTask}
                                 onPress={() => {
-                                    favoriteTask(item);
-                                }}
-                            >
-                                <FontAwesome
-                                    name="star"
-                                    size={23}
-                                    color={
-                                        item?.status ? "#00246B" : "lightgray"
-                                    }
-                                ></FontAwesome>
-                            </TouchableOpacity>
-                            <TouchableOpacity
-                                style={styles.deleteTask}
-                                onPress={() => {
                                     deleteTask(item);
                                 }}
                             >
                                 <FontAwesome
-                                    name="trash-o"
+                                    name="check"
                                     size={23}
-                                    color="lightgray"
+                                    color="#00246B"
                                 ></FontAwesome>
                             </TouchableOpacity>
                         </View>

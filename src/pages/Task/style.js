@@ -30,10 +30,10 @@ const styles = StyleSheet.create({
     },
     deleteTask: {
         justifyContent: "center",
-        paddingRight: 15,
+        paddingRight: 18,
     },
     descriptionTask: {
-        width: "75%",
+        width: "82%",
         alignContent: "flex-start",
         backgroundColor: "#f5f5f5cf",
         padding: 12,

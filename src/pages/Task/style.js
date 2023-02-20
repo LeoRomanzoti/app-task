@@ -3,7 +3,6 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
         paddingTop: 20,
     },
     iconButton: {
@@ -30,7 +29,7 @@ const styles = StyleSheet.create({
     },
     deleteTask: {
         justifyContent: "center",
-        paddingRight: 18,
+        paddingRight: 8,
     },
     descriptionTask: {
         width: "82%",
@@ -40,7 +39,21 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         borderRadius: 50,
         marginBottom: 5,
-        marginLeft: 15,
+        marginLeft: 10,
+        marginRight: 3,
+        color: "#282b2db5",
+    },
+    scratch: {
+        textDecorationLine: "line-through",
+        width: "82%",
+        alignContent: "flex-start",
+        backgroundColor: "#f5f5f5cf",
+        padding: 12,
+        paddingHorizontal: 20,
+        borderRadius: 50,
+        marginBottom: 5,
+        marginLeft: 10,
+        marginRight: 3,
         color: "#282b2db5",
     },
 });

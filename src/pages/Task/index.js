@@ -47,7 +47,11 @@ export default function Task({ navigation }) {
                     return (
                         <View style={styles.tasks}>
                             <Text
-                                style={styles.descriptionTask}
+                                style={
+                                    item?.status
+                                        ? styles.scratch
+                                        : styles.descriptionTask
+                                }
                                 onPress={() => {
                                     navigation.navigate("Details", {
                                         id: item.id,
@@ -60,13 +64,27 @@ export default function Task({ navigation }) {
                             <TouchableOpacity
                                 style={styles.deleteTask}
                                 onPress={() => {
-                                    deleteTask(item);
+                                    favoriteTask(item);
                                 }}
                             >
                                 <FontAwesome
                                     name="check"
                                     size={23}
-                                    color="#00246B"
+                                    color={
+                                        item?.status ? "#00246B" : "lightgray"
+                                    }
+                                ></FontAwesome>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={styles.deleteTask}
+                                onPress={() => {
+                                    deleteTask(item);
+                                }}
+                            >
+                                <FontAwesome
+                                    name="trash-o"
+                                    size={23}
+                                    color="lightgray"
                                 ></FontAwesome>
                             </TouchableOpacity>
                         </View>

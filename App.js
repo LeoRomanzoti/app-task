@@ -19,6 +19,9 @@ export default function App() {
                         fontWeight: "bold",
                         fontSize: 23,
                     },
+                    cardStyle: {
+                        backgroundColor: "#fff",
+                    },
                 }}
             >
                 <Stack.Screen
